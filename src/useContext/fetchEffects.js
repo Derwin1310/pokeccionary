@@ -29,7 +29,7 @@ const reduceData = (fullData) => {
   const power = stats.reduce((acum, value) => acum + value.base_stat, 0)
 
   const generaEN = genera.filter(item => item.language.name === "en")
-  const subTitle = generaEN[0].genus
+  const subTitle = generaEN[0]?.genus || ""
 
   const descriptionEN = flavor_text_entries.filter(item => item.language.name === "en")
   const description = descriptionEN[0].flavor_text.replace("\f", '. ')
