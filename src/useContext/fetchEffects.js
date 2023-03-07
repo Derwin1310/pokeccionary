@@ -31,8 +31,8 @@ const reduceData = (fullData) => {
   const generaEN = genera.filter(item => item.language.name === "en")
   const subTitle = generaEN[0]?.genus || ""
 
-  const descriptionEN = flavor_text_entries.filter(item => item.language.name === "en")
-  const description = descriptionEN[0].flavor_text.replace("\f", '. ')
+  const descriptionEN = flavor_text_entries?.filter(item => item.language.name === "en") || ""
+  const description = descriptionEN[0]?.flavor_text.replace("\f", '. ') || ""
 
   const formattedStats = stats.map(({ stat, base_stat }) => ({ name: stat.name, value: base_stat }))
 
